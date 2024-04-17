@@ -1,3 +1,3 @@
 # WebHackingStudy
 
-# This is a 5 months study note to study Web Application Development and Webhacking.
+# This is a study note to study Web Application Development and Web hacking for 5 months.
