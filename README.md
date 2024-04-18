@@ -8,5 +8,5 @@
 # Web development (APM) - .ova file import to VM ware
 # Student / Student1234
 # ifconfig -> IP address check
-# VMware -> network setting up
-#
+# VMware -> network setting up // Mac Error (https://www.virtualbox.org/wiki/Testbuilds)
+# 
