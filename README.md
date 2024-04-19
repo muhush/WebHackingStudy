@@ -13,3 +13,4 @@
 # Install the .ova file after converting .qcow2 (https://www.youtube.com/watch?v=1suVXymrD0Q&ab_channel=SYSADMIN102%E2%84%A2)
 
 # MAC M1 Network Error (NAT) - https://shape.host/resources/mastering-network-configuration-on-ubuntu-22-04-dhcp-and-static-ip-setup-for-single-and-multiple-nics
+# Termius - connect IP Address for a simple environment
