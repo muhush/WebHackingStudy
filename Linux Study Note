@@ -6,11 +6,20 @@
 # 02. Setting
 # Part 1. Virtual Machine 
 # Part 2. Kali Linux
-#          - Kali Linux download (https://www.kali.org/get-kali/#kali-platforms)
-#          - Install on UTM (https://www.youtube.com/watch?v=9zdjQ9w_v_4&ab_channel=KskRoyal)
-#            = Error Kali needs at least 30GB
+#     - Kali Linux download (https://www.kali.org/get-kali/#kali-platforms)
+#     - Install on UTM (https://www.youtube.com/watch?v=9zdjQ9w_v_4&ab_channel=KskRoyal)
+#        = Error Kali needs at least 30GB
 # Part 3. Command
-#          - CLI
-#          - Shell
-#          - Command Structure (1. Command 2. Argument 3. Option)
-#             which id (the command belongs to some programs)
+#     - CLI
+#     - Shell
+#     - Command Structure (1. Command 2. Argument 3. Option)
+#         which id (the command belongs to some programs)
+# 03. Directory
+# Part 1. Current directory - pwd
+# Part 2. Directory movement 
+#     - Directory files check - ls
+#     - Change Directory - cd
+# Part 3. Home Directory (~) - cd ~
+#     - Switch User - su
+# Part 4. File information - ls [file name or directory path] -l
+#     - (.) hidden files => ls -a
