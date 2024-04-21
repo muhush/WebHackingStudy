@@ -23,3 +23,16 @@
 #     - Switch User - su
 # Part 4. File information - ls [file name or directory path] -l
 #     - (.) hidden files => ls -a
+# Part 5. Kali Linux File System
+#     - /bin = Binary, execute files
+#     - /dev = device, connecting hardware device
+#     - /etc = setting files
+#     - /home = each account home directory
+#     - /lib = library, sharing folders
+#     - /sbin = system administrator files
+#     - /tmp = temporary, anyone can use this directory, delete after shutdown
+#     - /var = save files in programs
+# Part 6. Absolute Path vs Relative Path
+#    - https://www.redhat.com/sysadmin/linux-path-absolute-relative
+#    - ./ = current location
+#    - ../ = higher location
