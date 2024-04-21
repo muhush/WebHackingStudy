@@ -1,6 +1,4 @@
-# WebHackingStudy
-
-# This is a study note to study Web Application Development and Web hacking for 5 months.
+# WebHackingStudy Week 1
 
 # Setting Environment (Web Server)
 # Web server - deliver file
@@ -37,4 +35,9 @@
 
 # vscode - sftp plug in
 
-
+# --PHP
+# $_GET['name'] = a parameter through GET Method (*Parameter: elements inserted in your URLs to help you filter and organize content)
+# GET / POST = https://www.akto.io/academy/get-vs-post
+# Front-end vs Back-end
+# Back-end = Server-side code (PHP, ASP, JSP, ...)
+# Front-end = Client-side code, Browser side (HTML, CSS, Javascript, ...)
