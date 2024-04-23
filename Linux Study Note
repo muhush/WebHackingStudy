@@ -36,3 +36,7 @@
 #    - https://www.redhat.com/sysadmin/linux-path-absolute-relative
 #    - ./ = current location
 #    - ../ = higher location
+# 04. File
+# Part 1. Vi Text Editor - Note
+#    - Vi mode (Edit mode [Excute: i] / Command mode [esc button back to the mode])
+#    - Command mode (:w = Save)
