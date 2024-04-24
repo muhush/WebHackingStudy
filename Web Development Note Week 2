@@ -1,5 +1,55 @@
+# Week 2 Class
 # NAT ?
 # NAT network ?
 # Log-in page connecting to DB ?
 # Docker ?
 # Docker (WebApp, mysql / specific port: CAT) vs Python (Web Application)
+
+-------------------------------------------------------------------------
+
+# Part 1. Reminding week 1
+# Web server architecture
+# WEP, WAS, DB
+
+# URL = [protocol]://[IP]:[port]/[path]
+# ?[parameter name]=[parameter value]   (GET Method)
+
+# Assignment Review
+# Index page - main page (Log-in page) = When people get the webpage access, the webpage shows directly the index page (Log-in page).
+#            - header("location:login.php"); exit; = When operating page movement, the header needs a direction inside a response.
+#                                                  = exit; function is essential!!! because it is available to redirect it.
+# Login page - <form action = ""> = When the value in action is empty, the login function sends the value itself.
+# PHP function = When using any function frequently, we can make separated classes for the function.
+#              - <?php require_once('login_func.php'); ?>
+
+# Example of the separated function class
+<?php
+function login1($userid, $userpass) {
+  $cred_id = "admin";
+  $cred_pw = "admin1234";
+  if($userid == $cred_id and $userpass == $cred_pw) {
+    return $userid;
+  }else{
+    return 0;
+  }
+}
+?>
+
+# Example of Login page to bring the separated function
+<?php
+  if(isset($_POST[ 'Submit'])){
+    $login_res=login1($_POST[ 'UserId'], $_POST['Password']) ;
+    echo "This > ". $login_res;
+    if($login_res) {
+      header ("location: index.php?login_id=". $login_res );
+      exit;
+    }else{
+?>
+
+# Error!
+# 1. Print PHP Error
+# 2. Echo "This >".$login_res;
+
+-------------------------------------------------------------------------
+
+Part 2.
