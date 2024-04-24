@@ -17,6 +17,7 @@
 
 # File share - sudo python3 -m HTTP.server 80
 # Web file delivery
+# SFTP - https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp
 # Request from web browser
 
 # URL Rule
