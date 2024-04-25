@@ -52,4 +52,8 @@ function login1($userid, $userpass) {
 
 -------------------------------------------------------------------------
 
-Part 2.
+# Part 2. Database = saving data, ex) Excel file
+#     - Table
+#     - Columns = Data category
+#     - Rows = 
+
