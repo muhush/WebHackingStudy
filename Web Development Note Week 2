@@ -73,3 +73,36 @@ function login1($userid, $userpass) {
 #             select [column name] from [table name] where [condition]
 #             ex) select name,pass from test_table where name='doldol'
 #             condition - and // or
+
+-------------------------------------------------------------------------
+
+# Part 3. WAS - DB Connection
+#      - PHP and MySQL Connection
+#      1. WAS must know ID and Password
+#      2. select
+#      3. Bring data and print
+
+# db_test.php
+<?PHP
+  define('DB_SERVER', 'localhost');
+  define('DB_USERNAME', 'admin');
+  define('DB_PASSWORD', 'student1234');
+  define('DB_NAME', 'test');
+
+  $db_conn = mysqi_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+
+  //$sql = "select * from test_table";
+  $sql = "select * from test_table where name='doldol'";
+  $result = mysql_query($db_conn, $sql);
+
+  $row = mysql_fetch_array($result);
+
+  echo "Name : " . $row['name'];
+  var_dump($row);
+
+  echo "Pass : " . $row['pass'];
+  $db_pass = $row['pass'];
+  if($_POST['userpass'] == $db_pass) {
+      //login ok
+  }
+?>
