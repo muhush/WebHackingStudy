@@ -55,5 +55,21 @@ function login1($userid, $userpass) {
 # Part 2. Database = saving data, ex) Excel file
 #     - Table
 #     - Columns = Data category
-#     - Rows = 
+#     - Rows
 
+# DB - http://10.60.126.181:1018/phpmyadmin/
+#    - account and password (admin / student1234)
+#    - click new and create a test db => create table
+#    - SQL = DB language
+#       - select = bring data
+#            select [column name] from [table name]
+#            ex) select name,pass from test_table
+#                select * from test_table (every column)
+#       - insert = input data, save data
+#             insert into [table name] (column name) value (values)
+#             ex) insert into test_table (name,score,pass) value ('doldol','80','2222')
+#                 insert into test_table value (NULL,'dangdol','70','3333')
+#       - where = specific select data
+#             select [column name] from [table name] where [condition]
+#             ex) select name,pass from test_table where name='doldol'
+#             condition - and // or
