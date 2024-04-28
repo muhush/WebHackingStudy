@@ -106,3 +106,22 @@ function login1($userid, $userpass) {
       //login ok
   }
 ?>
+
+# mysql_fetch_array = It can make individual values bring out
+
+-------------------------------------------------------------------------
+
+# Part 4. Summary
+
+# Database?
+# SQL? SQL(select, insert, where)?
+# How to use select in SQL of DB by using PHP
+
+-------------------------------------------------------------------------
+
+# Assignment
+# 1. Review (Database, SQL)
+# 2. Mini Mission = Result (Student "DolDol"'s score is "80") Using the GET method 
+# 3. Create Account Page
+# 4. Log-in page connect to DB
+# Extra. Joining Account information page
