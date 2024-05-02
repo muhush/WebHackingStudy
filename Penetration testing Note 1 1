@@ -1,0 +1,10 @@
+# Part 1 History of the Internet
+
+# Part 2 Web and Server Technology
+# 1. Basic concepts of web application (https://www.youtube.com/watch?v=RsQ1tFLwldY&t=7s&ab_channel=NaturalProgrammer)
+#    1) Wep Application 
+#      - Web Client (IE, Firefox, Chrom) and User Agent(cURL, Telnet) = Request to Web server
+#      - Web Language (Http, FTP, WebSocket)
+#      - Web Resource (HTML, PDF, JSON
+#      - Web Server (Static or Dynamic) = a network application listening on some port, Response to Web Client
+#      - URL
