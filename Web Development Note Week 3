@@ -89,4 +89,9 @@ if(isset($_POST['id']) && isset($_POST['pw'])){
 
 --------------------------------------------------------------------------------
 
+# Part 3 - Session ID
+# typically located in either the URL query parameters or in a Cookie that is assigned to the user.
 
+--------------------------------------------------------------------------------
+
+# Assignment
