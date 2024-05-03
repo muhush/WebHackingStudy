@@ -87,6 +87,11 @@ if(isset($_POST['id']) && isset($_POST['pw'])){
 # (+) HASH - one way, it cannot return
 #            One string of characters in a password is transformed into a completely different string using a mathematical hashing function.
 
+# 4 logics to Login
+# 1. Identification / Authentication together
+# 2. Identification / Authentication Seperately
+# 3. Identification / Authentication together (with Hash)
+# 4. Identification / Authentication Sepeartely (with Hash)
 --------------------------------------------------------------------------------
 
 # Part 3 - Session ID
@@ -95,3 +100,7 @@ if(isset($_POST['id']) && isset($_POST['pw'])){
 --------------------------------------------------------------------------------
 
 # Assignment
+# 1. Review - Understanding Login Logic (Identification / Authentication)
+# 2. Last Assignment
+# 3. Log-in page (based on 4 Logics)
+# Additional - jwt
