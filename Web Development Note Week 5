@@ -1,0 +1,29 @@
+# Part 1 - Review
+# Client   | Web - WAS - DB
+
+# Web Browser
+# Front End (user / HTML,CSS,Javascript)  ----  Back end (server / ASP, JSP, PHP, Python)
+
+# Web server : file
+#   - cookie = post-it
+#   - Session | SessionID
+
+# Identification / Authentication
+
+# Burp Suite - Web Proxy tool
+
+----------------------------------------------------------------------------------------
+
+# Part 2 - SQL Injection
+
+# select * from member where id='normalitic'   =  All data
+# select id,pass from member where id='normalitic'   =  ID, Password
+
+# ID -> normaltic' #
+#     # = comment
+# ID -> normaltic' or '1'='1
+#    - where id ='normaltic' or ('1'='1' and pass = '99')
+#    - "and" function works first
+
+# CTF
+# 
