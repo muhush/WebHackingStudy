@@ -40,5 +40,21 @@
 # Part 1. Vi Text Editor - Note
 #    - Vi mode (Edit mode [Excute: i] / Command mode [esc button back to the mode])
 #    - Command mode (:w = Save, :q = exit)
-#    - Search (on commend mode) = /[search word]
+#    - Search (on command mode) = /[search word]
 #    - Specific line = :[line number] , line delete (dd)
+# Part 2. Check files
+#    - cat [txt file name]
+#    - It can read txt file only
+#    - file [file name] = text file type
+#    - more = it shows on the top
+# Part 3. COPY
+#    - cp cp_test ./Desktop/        = copy [src] [dst]
+#    - cp cp_test ./Desktop/copy_test    = change the file name
+#    - mkdir normal_dir          = create a folder
+#    - cp -r normal_dir ./copy_dir      = directory copy
+# Part 4. Remove
+#    - rm -r ./copy_dir       = remove directory // -f force remove
+# Part 5. Move
+#    - mv mv_test ./Desktop/
+#    - mv [current directory] [future directory]
+#    - mv mv_test ./mv_changeName          = change file name
