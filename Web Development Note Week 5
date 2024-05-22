@@ -15,18 +15,67 @@
 ----------------------------------------------------------------------------------------
 
 # Part 2 - SQL Injection
+#  a code injection technique that might destroy your database
+#  SQL Example   
+#    - select * from member where id='normalitic'   =  All data
+#    - select id,pass from member where id='normalitic'   =  ID, Password
 
-# select * from member where id='normalitic'   =  All data
-# select id,pass from member where id='normalitic'   =  ID, Password
+#  SQL Injection Example
+#    - ID -> normaltic' #
+#        # = comment
+#    - ID -> normaltic' or '1'='1
+#      - where id ='normaltic' or '1'='1' and pass = '99'
+#      - "and" function works first
 
-# ID -> normaltic' #
-#     # = comment
-# ID -> normaltic' or '1'='1
-#    - where id ='normaltic' or ('1'='1' and pass = '99')
-#    - "and" function works first
+----------------------------------------------------------------------------------------
 
 # CTF
 # 1. Login Bypass 1
+#   - Check whether the SQL injection working or not
 #   - normaltic1' or '1'='1
+#   - Assume the identification and authentication together
 # 2. Login Bypass 2
 #   - normaltic1' #
+#   - Assume the identification and authentication together with hash? or not
+# 3. Login Bypass 3
+#   - Assume the identification and authentication separate because of not working of the last SQL injection
+#   - I need to find where the password location. It can be used by UNION
+#   - Check the UNION table how many tables is located in  (doldol' order by 1#)
+#   - Use the UNION (SELECT a, b FROM table1 UNION SELECT c, d FROM table2)
+#   - ID = ' union select 'normaltic3', '0000' #  // Password 0000
+# 4. Login Bypass 4
+#   - Assume the identification and authentication separate with hash
+#   - Use the UNION and Hash (md5)
+#   - ID = ' union select 'normaltic4', md5('0000') #  // Password 0000
+# 5. Login Bypass 5
+#   - Read burp suite and we can see the cookiee session and loginUser = doldol
+#   - we can change the loginuser to normaltic5 on repeater and send it.
+# 6. Secret Login
+#   - The hint said to login as an admin, but they forgot the admin account.
+#   - So, try the basic SQL Injection to check login logic condition
+#   - Use the limit function of SQL Injection to bring specific row information
+#   - ID = ' or '1'='1' limit 1,1 #
+# 7. Get Admin
+#   - At the Burpsuite, the login function uses a cookies session.
+#   - Change the loginUser to Admin
+# 8. PIN CODE Bypass
+#   - Brute Force: Random input
+#   - Page is changed sequence
+#   - So, Change the step2.php to step3.php
+# 9. Admin is Mine
+
+# CTF Resource
+# https://book.hacktricks.xyz/pentesting-web/login-bypass
+# https://portswigger.net/web-security/sql-injection/union-attacks
+# https://www.geeksforgeeks.org/sql-limit-clause/
+# https://www.invicti.com/blog/web-security/sql-injection-cheat-sheet/#ByPassingLoginScreens
+
+----------------------------------------------------------------------------------------
+
+# Assignment
+# 1. Review
+# 2. CTF
+#   - Write up
+# 3. Web Development
+#   - Login page
+#   - Create Account
