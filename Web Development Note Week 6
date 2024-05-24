@@ -1,5 +1,7 @@
 # Part 1. How to solve CTF
-#   1. You have to find the reason of the problem.
+#   1. You have to find the reason for the problem.
 #   2. check step by step - debugging
 
-# Part 2. 
+# Part 2. CTF Solution
+#  1. Admin is mine
+#    - It blocks the login page on Javascript.
