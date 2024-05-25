@@ -2,6 +2,27 @@
 #   1. You have to find the reason for the problem.
 #   2. check step by step - debugging
 
+-------------------------------------------------------------------------------------------------------
+
 # Part 2. CTF Solution
 #  1. Admin is mine
 #    - It blocks the login page on Javascript.
+#  * Burp how to modify the response
+#  * countermeasure of SQL Injection = Prepared Statement
+
+-------------------------------------------------------------------------------------------------------
+
+# Part 3. SQL Injection - Data Extraction
+#   <1> The place where use data in database
+#   <2> The data display or not
+#      - Display = Board
+#      - Not display = loginm, ID double check
+
+#    1. Data Extraction
+#      - select * from board where idx= '______' or '1' = '1'    => it brings all data, but it cannot bring other table
+#      - union  = it can use select function again and the column number must be the same
+#      ex) select pass from member union select id from member
+#      ex) selct id, pass from member union select 1,2
+#      - order by = sort
+#      ex) select ~~~ order by [column name]
+#      ex) select id from member order by id
