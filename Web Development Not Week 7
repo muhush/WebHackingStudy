@@ -1,0 +1,7 @@
+# UNion SQL Injection
+#  1. rule? = column number (order by / union select null, null .... #)
+#  2. it can make select use agian
+#  3. https://brightsec.com/blog/union-sql-injection/
+
+# Error Based SQL Injection
+# an in-band SQL Injection technique that relies on error messages thrown by the database server to obtain information about the structure of the database.
