@@ -3,5 +3,8 @@
 #  2. it can make select use agian
 #  3. https://brightsec.com/blog/union-sql-injection/
 
+# SQL Injection
 # Error Based SQL Injection
 # an in-band SQL Injection technique that relies on error messages thrown by the database server to obtain information about the structure of the database.
+# Blind SQL Injection
+# a type of SQL Injection attack that asks the database true or false questions and determines the answer based on the applications response.
