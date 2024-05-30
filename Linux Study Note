@@ -89,3 +89,24 @@
 #    - u         r
 #    - g    +,-  w
 #    - o         x
+# 7. Redirection
+# Part 1. Data Stream
+#            input ---------------------->
+#       People <--> operation system <---> Computer
+#            <---------------------- output
+#   Standard input stream, 0
+#   Standard output stream, 1
+#   Standard error stream, 2
+#   File descriptor (fd):
+# Part 2. Redirection
+#   pwd > pwd_result    (>: redirection)
+#   pwd >> pwd_result    (>>: redirection without deleting information)
+#   For Hacking, when saving the file instead of the result of the command on the screen
+# Part 3. PIPE
+#   Process --> pipe --> process
+#   The output of one process makes the input of the other process
+#   A form of redirecting output to another destination for further processing.
+#   grep [finding pattern] [searching file / directory]
+#   ex) cat /etc/passwd | grep root
+#   ex) ifconfig | grep inet
+#   ex) ls /bin | grep "find"
