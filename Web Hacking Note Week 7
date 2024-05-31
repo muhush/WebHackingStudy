@@ -1,6 +1,6 @@
 # UNion SQL Injection
-#  1. rule? = column number (order by / union select null, null .... #)
-#  2. it can make select use agian
+#  1. Rule? = column number (order by / union select null, null .... #)
+#  2. it can make select use again
 #  3. https://brightsec.com/blog/union-sql-injection/
 
 # Other SQL Injections
@@ -11,3 +11,23 @@
 
 # Python Basic Logic
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 1 - Error based SQL Injection
+#   - Data output by using error messages
+# 1. Syntax Error in Logic Error
+#  ex) select * from member where id='
+#  - Syntax error is not working for SQL Injection
+
+# 2. Logic Error (Error Based SQL Injection)
+#  - By using error messages, input the SQL Injection and make it output
+#  - We want output on the error message
+#  - XPATH syntax error = a syntax or language that makes finding elements on a webpage possible using XML path expression
+#  Logic error tip to create errors
+#    - It is different from databases such as MySQL, oracle, mssql
+#    - extractvalue('xml text','xml expression')     = The EXTRACTVALUE function takes as arguments an XMLType instance and an XPath expression and returns a scalar value of the resultant node.
+#    ex) normaltic' and extractvalue('1', ':normaltic') and '1'='1
+#    ex) normaltic' and extractvalue('1', concat(0x3a,(select'normaltic'))) and'1'='1
+#    concat('1','2') => 12      = The concat() method of Array instances is used to merge two or more arrays.
+#    concat(0x3a, 'test') => :test
+#    concat(0x3a, (select 'normaltic'))
