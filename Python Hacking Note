@@ -2,4 +2,47 @@
 #   Python character
 #    - interpreter language
 # 2. Basic
-#  Values = data
+#  A. Values = data
+#    1) Mission 1
+userName = input("what is your name? ")
+print("Good morning, " + userName + "!")
+print("I like fruits. How about you?")
+userFruit = input("Do you have a favorite? ")
+print("OK. You like " + userFruit + "!")
+print("I prepare " + userFruit + " for you!")
+#  B. Data type
+#  C. Boolean
+#  D. List
+#    dataList = [1, "seungho", "apple"]
+#    print(dataList[2])
+#    addData = input("Add data? ")
+#    dataList.append(addData)
+#    print(dataList)
+#    dataList.remove("apple")
+#    print(dataList)
+#    The len() function returns the number of items in an object.
+#   2) Mission 2
+userInfo = []
+userName = input("what is your name? ")
+userInfo.append(userName)
+print("Good morning, " + userInfo[0] + "!")
+print("I like fruits. How about you?")
+userFruit = input("Do you have a favorite? ")
+userInfo.append(userFruit)
+print("OK. You like " + userInfo[1] + "!")
+print("I prepare " + userInfo[1] + " for " + userInfo[0] + " !")
+#  E. tuple
+#    - it cannot change data
+#  F. Dictionary
+#    - Saving Key, values
+#    data = {"name":"seungho", "fruit":"apple"}
+#    data["email"] = "test@test.com"
+#    del(data["fruit"])
+#   3) Mission 3
+userInfo = {}
+userInfo["userName"] = input("what is your name? ")
+print("Good morning, " + userInfo["userName"] + "!")
+print("I like fruits. How about you?")
+userInfo["userFruit"] = input("Do you have a favorite? ")
+print("OK. You like " + userInfo["userFruit"] + "!")
+print("I prepare " + userInfo["userFruit"] + " for you!")
