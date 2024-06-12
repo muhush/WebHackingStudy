@@ -1,0 +1,11 @@
+# Review
+# SQL Injection?
+#   - Excute SQL Injection to extract data in Database
+#   - Select [column_name] from table
+#   - Create Attack format
+#   - in the field, usually use blindSQLi and it is the final step
+#   - Automatic tool by using python
+#   - Provention = prepared statement, excepting order by, column, so use white list
+
+# XSS
+#  - Client site attack
