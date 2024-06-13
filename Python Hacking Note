@@ -46,3 +46,42 @@ print("I like fruits. How about you?")
 userInfo["userFruit"] = input("Do you have a favorite? ")
 print("OK. You like " + userInfo["userFruit"] + "!")
 print("I prepare " + userInfo["userFruit"] + " for you!")
+#  3. Control Code
+#    A. if statement
+#    1) mission 4
+score = int(input("What is your score?"))
+if (score == 100):
+    print ("Very Good")
+elif (score < 100 and score >= 80):
+    print ("Good")
+elif (score < 80 and score >= 40):
+    print ("Need to work on")
+elif (score >= 0 and score < 40):
+    print ("What are you doing?")
+else:
+    print ("Input correct score!!")
+#    B. Exception
+#      - try: (execute code) except: (error code) exit()
+#    C. repeat
+#      - while
+#    2) mission 5
+while (True):
+    cmd = input("> ")
+    if (cmd == "exit"):
+        break
+    if (len(cmd) >  10):
+        print("wrong commend")
+        continue
+    
+    print("Working" + cmd)
+#    D. for
+numList = [1,2,3,4,5,6,7,8,9,10]
+numList1 = range(1,11)
+for num in numList:
+  print(num)
+#    3) mission 6
+for num in range(1,101):
+    if (num % 2 == 0):
+        print(str(num) + ": even")
+    else:
+        print("{}: odd".format(num))
