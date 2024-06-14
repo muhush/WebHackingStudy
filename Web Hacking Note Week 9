@@ -9,3 +9,10 @@
 
 # XSS
 #  - Client site attack
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 1. SQL Injection Point Review
+#    - Web site = by using SQL statement
+#               = Try to attack after guessing SQL statement to the server side
+#    
