@@ -25,7 +25,7 @@
 
 ------------------------------------------------------------------------------------------------
 
-# Part 3. - SQL Injection prevention
+# Part 3. - SQL Injection countermeasure
 #    1. Prepared Statement
 #      - Prepared compiling
 #    2. Vulnerabilities
