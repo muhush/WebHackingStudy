@@ -5,7 +5,7 @@
 #   - Create Attack format
 #   - in the field, usually use blindSQLi and it is the final step
 #   - Automatic tool by using python
-#   - Provention = prepared statement, excepting order by, column, so use white list
+#   - Provention = prepared statement, excepting order by, column, so use the white list
 
 # XSS
 #  - Client site attack
@@ -26,4 +26,14 @@
 #    - time based blind SQLi = sotingAd=ASC;if+substring((select%20user_name()),1,1)=%27a%27+waitfor+delay+%270:0:1%27&startDt=&endDt=&keyword=
 
 ------------------------------------------------------------------------------------------------------------------------------------
+
+# XSS vulnerability: Cross-Site Scripting
+#  - Insert script in client site
+#  - Victim = User
+#  - Client script = Showing in User browser
+#  - HTML, CSS, Javascript
+#  - Attack method = Execute the attacking script in the user's browser
+
+
+
 
