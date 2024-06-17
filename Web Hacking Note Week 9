@@ -27,13 +27,23 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-# XSS vulnerability: Cross-Site Scripting
+# Part 2. XSS vulnerability: Cross-Site Scripting
 #  - Insert script in client site
 #  - Victim = User
 #  - Client script = Showing in User browser
 #  - HTML, CSS, Javascript
 #  - Attack method = Execute the attacking script in the user's browser
 
+------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+# Part 3. How to use XSS
+#   1. Save in server
+#      - Create account
+#      - Write on board
+#      * Save data and print the data
+#      - WE save some data and display the data on the screen by using burp suite
+#      1) Check the data to display on the screen
+#      2) Check special letters = <'">
+#      3) POC (Proof of Concept = alert(1), prompt, confirm, console.log()    Why? it is easy to report
+#      name=normaltic<script>alert('xss attack')</script>
+#   2. Use server echo = parameter
