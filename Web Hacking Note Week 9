@@ -37,7 +37,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 
 # Part 3. How to use XSS
-#   1. Save in server
+#   1. Save in server (Stored XSS)
 #      - Create account
 #      - Write on board
 #      * Save data and print the data
@@ -47,3 +47,21 @@
 #      3) POC (Proof of Concept = alert(1), prompt, confirm, console.log()    Why? it is easy to report
 #      name=normaltic<script>alert('xss attack')</script>
 #   2. Use server echo = parameter
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 4. Reflected XSS
+#  1. Vulnerability point
+#    - occurs when a malicious script is reflected off of a web application to the victim's browser
+#    - the point of server response at which the data of the parameter input
+#    - ex) ID duplicate check
+#    - Send the link, so the payload must be GET method
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Assignment
+#  1. Report = alert(1)
+#  2. Submit => normalticpublic@gmail.com
+#  3. Review
+#  4. XSS Vulnerability & Report
+#  5. 
