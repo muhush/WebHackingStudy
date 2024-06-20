@@ -1,6 +1,9 @@
 # 1. Ready to Learn
 #   Python character
 #    - interpreter language
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
 # 2. Basic
 #  A. Values = data
 #    1) Mission 1
@@ -46,6 +49,9 @@ print("I like fruits. How about you?")
 userInfo["userFruit"] = input("Do you have a favorite? ")
 print("OK. You like " + userInfo["userFruit"] + "!")
 print("I prepare " + userInfo["userFruit"] + " for you!")
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
 #  3. Control Code
 #    A. if statement
 #    1) mission 4
@@ -85,3 +91,30 @@ for num in range(1,101):
         print(str(num) + ": even")
     else:
         print("{}: odd".format(num))
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4. Useful Code
+#    1) Function
+#        - a block of program statements which can be used repetitively in a program
+#    2) Mission 7
+#        - up down game
+com_num = 77
+life = 5
+def updownGame(com_num, user_num):
+    if(user_num > com_num):
+        print("Down")
+    elif (user_num < com_num):
+        print("Up")
+    else:
+        return True
+while (life > 0):
+    print("You have {} chance".format(life))
+    user_num = int(input("input number:"))
+    gameRes = updownGame(com_num, user_num)
+    if(gameRes):
+        print("Success")
+        exit()
+    life -= 1
+print("You lose")
+#    3) library
