@@ -117,4 +117,27 @@ while (life > 0):
         exit()
     life -= 1
 print("You lose")
-#    3) library
+#    3) library = import
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# 5. Final mission
+import random as r
+com_num = r.randrange(1,101)
+life = 5
+def updownGame(com_num, user_num):
+    if(user_num > com_num):
+        print("Down")
+    elif (user_num < com_num):
+        print("Up")
+    else:
+        return True
+while (life > 0):
+    print("You have {} chance".format(life))
+    user_num = int(input("input number:"))
+    gameRes = updownGame(com_num, user_num)
+    if(gameRes):
+        print("Success")
+        exit()
+    life -= 1
+print("You lose")
