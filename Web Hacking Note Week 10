@@ -17,7 +17,7 @@
 #  5. VPS or requestbin
 #    - https://public.requestbin.com/r/
 
-#  6. XSS
+#  6. XSS (https://github.com/imnarendrabhati/testing-new/blob/master/%3CIMG%20SRC%3DX%20ONERROR:JAVASCRIPT:ALERT(1)%3B%3E)
 #    1) CTF XSS 1 (https://portswigger.net/web-security/cross-site-scripting/contexts)
 #      - Error = Input script
 #      - Annoucement and create content "<script>alert(1)</script>" on the subject.
