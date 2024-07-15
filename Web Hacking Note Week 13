@@ -1,0 +1,26 @@
+# CSRF vs XSS
+#    - XSS: exploit a user's trust in a website by injecting malicious scripts that run within the user's browser on trusted sites.
+#    - CSRF : allowing attackers to perform unauthorized actions on behalf of the authenticated user.
+
+# POST Method
+#  <form> -> XSS
+
+#  CSRF Token - <iframe>
+#   <form>
+#   <input name ="pass" value="1234">
+#   <input name ="csrf" value="???">
+#   </form>
+
+# CSRF Countermeasure !!!
+#   - referer check
+#   - referer : read_content.php?id=123
+#   - If having a problem, pass the process
+#   <meta name="referrer" content="no-referrer">
+#   - Input identification information
+
+# SOP / CORS
+#  - Same resource (Domain, Skima, Port)
+#  - Cross Origin Resource Sharing
+
+# ACAO
+#  Access-Control-Allow-Origin
