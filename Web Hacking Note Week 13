@@ -24,3 +24,4 @@
 
 # ACAO
 #  Access-Control-Allow-Origin
+#  <ifram src="vuln.com/mypage.php">
