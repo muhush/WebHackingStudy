@@ -1,0 +1,63 @@
+# 1. Review
+#  CSRF definition?
+#    - exploit a website's trust in a user's browser, allowing attackers to perform unauthorized actions on behalf of the authenticated user.
+#    - Attack scenarios = Link, XSS, iframe
+#    - Countermeasure = Referal check, Add identification information
+
+# 2. File Upload
+#  Definition - when a web server allows users to upload files to its filesystem without sufficiently validating things
+                like their name, type, contents, or size.
+#  Cause - When a file is uploaded, it doesn't check or authenticate
+#  Location - Any upload location (Chekcing through burp suite)
+
+# 3. Attack scenarios
+#  - Unlimited = DoS Attack, Web Shell, Malware script, Back door, Ransomware
+#  1) Execution files on server side
+#    * Server-side script vs client-side script (XSS)
+#      - Server side script = php, asp, jsp, python, nodejs
+#  2) Phishing : HTML file
+#  3) Deface Attack
+#    - index file (covered)
+#  4) XSS - Stored XSS
+#  5) DoS
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# 4. Detail of execution file on server side
+#  - Web Shell
+#  - php web shell
+<?php echo system$_GET['cmd']; ?>
+# 5. Keypoint of Web Shell Attack
+#  1. Possibility of uploading web server code
+#  2. Path of the uploaded file
+#    * Path Check
+#      - Checking the output of the uploaded file
+#      - Copy image address
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# 5. CTF - Webshell
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Countermeasure for file upload
+#  1. Restriction of upload file
+#    - vulnerability = content-type: text/php
+#  2. Restriction of execution
+#    - saving router = ../filename.php   (it will execute)
+#  3. Restriction of extension
+#    - Change capital => pHp Php
+#    - Alternative extension => phtml, php3, php5  //  jspx, jsw
+#  4. Normal image
+#    - hex editor
+#    <?php system($_GET['cmd']);?>
+#    - File Signature
+#  5. Execution code on the server side
+#    - extension is supposed to be a web server extension
+#  6. Caution when finding vulnerabilities in file upload
+#    - Why using web shell = checking the execution of the upload file
+
+
+
+
+
