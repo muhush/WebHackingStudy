@@ -6,3 +6,34 @@
 #  Windows server : IIS web server
 #    - Uploading exe file = it operates on directly
 #    - Uploading php file = it is able to operate on web server if it know exact path.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+# 2. Image Web Shell
+#  - webshell.php.jpg => impossible
+#    - double extension
+#    - deceiving extension
+#    - null byte injection
+
+# 3. htaccess
+#  - AddType application/x-httpd-php .jpg
+
+# 4. Reverse Shell
+
+-----------------------------------------------------------------------------------------------------------------------
+
+# 5. Database information
+#  - File Include = include, include_once, require
+<?php include('nav.php') ?>
+
+# 6. File include
+#  - web page = Depending on the parameter value, it shows different pages
+#  - ?lang=ko.php
+<?php include($_GET['lang'];  ?>
+#  - it is possible to bring any random file.
+#  - it can't see the source code!
+#  - Local File Include Vulnerability
+
+
+
+
