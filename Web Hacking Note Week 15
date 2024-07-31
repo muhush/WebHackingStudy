@@ -34,6 +34,35 @@
 #  - it can't see the source code!
 #  - Local File Include Vulnerability
 
+-----------------------------------------------------------------------------------------------------------------------
 
+# 7. Web log
+#  - access log
+#  ../../opt/lampp/logs/access_log
 
+# 8. File upload countermeasure
+#  - file name obfuscation
+#  - hiding file path
+#  - Authentication vulnerability = when downloading to get access to the random path
+#  - Saving in the Database (BLOB / CLOB)
+#  - NAS = Network-attached storage (NAS) is a file-dedicated storage device that makes data continuously available for employees to collaborate effectively over a network
 
+-----------------------------------------------------------------------------------------------------------------------
+
+# 9. File download countermeasure
+#  - File download vulnerability
+#  download.php?fileName=test.txt
+#  <?php fileName = $_GET['fileName'];
+         download('/files// . $fileName); ?>
+#  fileName = ../../../etc/passwd
+#  Download Recommendation files
+#  - Linux = /etc/passwd
+#  - Windows = /boot.ini , /winnt/win.ini
+
+-----------------------------------------------------------------------------------------------------------------------
+
+# Assignment
+#  1. Web Development
+#  2. CTF
+#  3. Web development: Blog
+#  4. Report of vulnerability
